@@ -16,13 +16,22 @@ datasource db {
 
 model Link {
     id String @id @default(cuid())
-    userId String
-    text String
-    url String
-    icon String
-    textColor String
-    bgColor String
-    font String
+    userId        String
+    text          String
+    url           String
+    icon          String?
+    textColor     String
+    bgColor       String
+    font          String
+}
+
+model Page {
+    id            String @id @default(cuid())
+    userId        String
+    pageBgColor   String
+    pageTitle     String
+    pageFont      String
+    pageTextColor String
 }
 
 // Necessary for Next auth
@@ -58,7 +67,6 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
-    pageColor     String?
     accounts      Account[]
     sessions      Session[]
 }
