@@ -1,6 +1,7 @@
 import React from 'react'
 
 export type LinkProps = {
+  id: number;
   text: string;
   url: string;
   icon: string;
