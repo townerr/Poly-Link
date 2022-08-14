@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import Link, { LinkProps } from "../components/Link";
+import { useRouter } from "next/router";
 
 const data: LinkProps[] = [
   {
@@ -31,6 +32,9 @@ const data: LinkProps[] = [
 ]
 
 const Links: NextPage = () => {
+  const router = useRouter();
+  const username = router.asPath.slice(1).charAt(0).toUpperCase() + router.asPath.slice(2);
+
   return (
     <>
       <Head>
@@ -40,7 +44,7 @@ const Links: NextPage = () => {
       </Head>
 
       <main className="container mx-auto flex flex-col items-center justify-center p-4">
-        <h1 className="text-5xl font-semibold pt-24">User Links Page</h1>
+        <h1 className="text-5xl font-semibold pt-24">{username} Links</h1>
         <div className="py-8">
           {data.map((link) => {
             return (

@@ -14,8 +14,15 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
+model Link {
     id String @id @default(cuid())
+    userId String
+    text String
+    url String
+    icon String
+    textColor String
+    bgColor String
+    font String
 }
 
 // Necessary for Next auth
@@ -51,6 +58,7 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
+    pageColor     String?
     accounts      Account[]
     sessions      Session[]
 }
