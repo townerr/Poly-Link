@@ -34,7 +34,18 @@ const Links: NextPage = () => {
           <div className="py-8">
             {links.data?.map((link) => {
               return (
-                <Link key={link.id} id={link.id} userId={link.userId} text={link.text} url={link.url} icon={link.icon} textColor={link.textColor} font={link.font} bgColor={link.bgColor} />
+                <Link 
+                  key={link.id}
+                  id={link.id}
+                  userId={link.userId}
+                  text={link.text}
+                  url={link.url}
+                  icon={link.icon}
+                  textColor={link.textColor}
+                  font={link.font}
+                  bgColor={link.bgColor}
+                  editMode={editMode} 
+                />
               )
             })}
             <NewLinkButton />
@@ -46,7 +57,18 @@ const Links: NextPage = () => {
           <div className="py-8">
             {links.data?.map((link) => {
               return (
-                <Link key={link.id} id={link.id} userId={link.userId} text={link.text} url={link.url} icon={link.icon} textColor={link.textColor} font={link.font} bgColor={link.bgColor} />
+                <Link 
+                  key={link.id}
+                  id={link.id}
+                  userId={link.userId}
+                  text={link.text}
+                  url={link.url}
+                  icon={link.icon}
+                  textColor={link.textColor}
+                  font={link.font}
+                  bgColor={link.bgColor}
+                  editMode={editMode}
+                />
               )
             })}
           </div>
