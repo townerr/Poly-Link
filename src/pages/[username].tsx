@@ -3,7 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import { useRouter } from "next/router";
-import type { LinkType, Links } from "../server/router/links"; 
+import type { Links } from "../server/router/links"; 
 
 import Link from "../components/Link";
 import EditButton from "../components/EditButton";
@@ -29,7 +29,6 @@ const Links: NextPage = () => {
 
       {editMode ? (
         <div className="container mx-auto flex flex-col items-center justify-center p-4">
-          <div>editing mode on</div>
           <h1 className="text-5xl font-semibold pt-24">{username} Links</h1>
           <div className="py-8">
             {links.data?.map((link) => {
